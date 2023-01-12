@@ -1,0 +1,66 @@
+@import url(./reset.css);
+:root{
+    --header-footer-bg: #e4e4e4;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    flex: 1;
+}
+
+/*=======================================
+    wrapper
+=======================================*/
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    row-gap: 300px;
+
+    padding: 100px 10px;
+}
+
+
+/*=======================================
+    CONTAINER
+=======================================*/
+[class*="__container"]{
+    max-width: 1740px;
+    margin: 0 auto;
+}
+
+/*=======================================
+    MEDIA BREAKPOINT CONTAINER
+=======================================*/
+@media screen and (max-width: 1750px){
+    [class*="__container"]{ 
+        max-width: 1540px; 
+    }
+}
+@media screen and (max-width: 1560px){
+    [class*="__container"]{ 
+        max-width: 1200px; 
+    }
+}
+@media screen and (max-width: 1200px){
+    [class*="__container"]{ 
+        max-width: 970px; 
+    }
+}
+@media screen and (max-width: 992px){
+    [class*="__container"]{ 
+        max-width: 750px; 
+    }
+}
+@media screen and (max-width: 768px){
+    [class*="__container"]{
+        margin: 0 15px;
+    }
+}
