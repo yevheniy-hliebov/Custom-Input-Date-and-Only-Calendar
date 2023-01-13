@@ -7,6 +7,7 @@
     --main-bg: #ffffff;
     --main-border-color: #646464;
     --light-border-color: #969696;
+    --focus-border-color: #6489cc;
     --active-border-color: #6b6b6b;
 }
 
@@ -15,12 +16,29 @@
     position: relative;
 }
 .dropdown-date__btn {
+    position: relative;
     padding: 10px;
     background: var(--main-bg);
     border: 1px solid var(--main-border-color);
     border-radius: 7px;
 
     min-width: 300px;
+}
+
+.dropdown-date__btn::after{
+    content: '>';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.5s ease;
+}
+.dropdown-date__btn--active::after{
+    transform: translateY(-50%) rotate(270deg);
+}
+
+.dropdown-date__btn:focus, .dropdown-date__btn--active{
+    border: 1px solid var(--focus-border-color);
 }
 
 .dropdown-date__wrapper {

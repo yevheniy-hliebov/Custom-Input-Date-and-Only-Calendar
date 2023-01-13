@@ -85,6 +85,7 @@ function render(){
 
                     let setDate = new Date(Date.parse(checkedDateValue));
                     dropdownBtn.textContent = setDate.toLocaleDateString('en-us', JSON.parse(`${dataLocalFormating}`));
+                    dropdownBtn.focus();
 
                     dropdownInput.setAttribute("value", checkedDateValue);
                     if (dropdownBtn.classList.contains("dropdown-date__btn--active")){
@@ -109,6 +110,7 @@ function render(){
                     iYear--;
                 }
                 renderDateList(listDate, monthYearLabel, iMonth, iYear);
+                dropdownBtn.focus();
             }
             // Navigation Next
             if (targetEl === navBtnNext){
@@ -118,6 +120,7 @@ function render(){
                     iYear++;
                 }
                 renderDateList(listDate, monthYearLabel, iMonth, iYear);
+                dropdownBtn.focus();
             }
             // Reset
             if (targetEl === bntReset){
@@ -125,6 +128,7 @@ function render(){
                 renderDateList(listDate, monthYearLabel, currMonth, currYear);
                 dropdownInput.setAttribute("value", '');
                 dropdownBtn.textContent = 'Date';
+                dropdownBtn.focus();
             }
             // Set Today
             if (targetEl === btnToday){
@@ -141,6 +145,7 @@ function render(){
                 if (dropdownCalendarWrapper.classList.contains("dropdown-date__wrapper--open")){
                     dropdownCalendarWrapper.classList.remove("dropdown-date__wrapper--open");
                 }
+                dropdownBtn.focus();
             }
 
             if (!targetEl.closest(`.dropdown-date--${index}`) && dropdownCalendarWrapper.classList.contains("dropdown-date__wrapper--open")){

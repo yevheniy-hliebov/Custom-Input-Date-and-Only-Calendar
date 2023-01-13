@@ -1,16 +1,18 @@
 function render(){
-    let months, daysOfWeek, today,
+    let months, daysOfWeek, today, reset,
     // language = navigator.language;
     language = 'en';
     if (language == 'uk'){
         months = [ 'Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
         daysOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
         today = 'Сьогодні';
+        reset = "Очистити";
     }
     else {
         months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
         daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
         today = 'Today';
+        reset = "Reset";
     }
 
     
@@ -42,7 +44,8 @@ function render(){
             const dayOfWeek = listDayOfWeek[i];
             dayOfWeek.textContent = daysOfWeek[i];
         }
-        btnToday.textContent = today;
+        if (btnToday) btnToday.textContent = today;
+        if (bntReset) bntReset.textContent = reset;
 
 
         renderDateList(listDate, monthYearLabel, iMonth, iYear);
